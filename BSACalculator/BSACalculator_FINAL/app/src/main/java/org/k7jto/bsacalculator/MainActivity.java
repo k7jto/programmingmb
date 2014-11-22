@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
+import android.content.DialogInterface;
+import android.app.AlertDialog;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -36,16 +39,31 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_about) {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
+        AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+
+        // set the message to display
+        alertbox.setMessage(getString(R.string.app_descrip));
+
+        // add a neutral button to the alert box and assign a click listener
+        alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+
+            // click listener on the alert box
+            public void onClick(DialogInterface arg0, int arg1) {
+                // the button was clicked
+
+            }
+        });
+
+        // show it
+        alertbox.show();
+
+        return true;
+
 
     }
+
 
     // This function takes the user's current keystroke and appends it to the
     // numeric display (EditText) at the top
@@ -214,6 +232,27 @@ public class MainActivity extends Activity {
         int numY = getNumber(b);
         int numAnswer = numX / numY;
         return Integer.toString(numAnswer);
+    }
+
+
+
+    /* THIS IS THE ABOUT DIALOG */
+    protected void showAbout(View v) {
+        // Inflate the about message contents
+        View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
+
+        // When linking text, force to always use default color. This works
+        // around a pressed color state bug.
+        TextView textView = (TextView) messageView.findViewById(R.id.about_credits);
+        int defaultColor = textView.getTextColors().getDefaultColor();
+        textView.setTextColor(defaultColor);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.ic_launcher);
+        builder.setTitle(R.string.app_name);
+        builder.setView(messageView);
+        builder.create();
+        builder.show();
     }
 
 }

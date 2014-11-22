@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BSACalculator.iml" filepath="$PROJECT_DIR$/BSACalculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/BSACalculator_FINAL.iml" filepath="$PROJECT_DIR$/BSACalculator_FINAL.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
