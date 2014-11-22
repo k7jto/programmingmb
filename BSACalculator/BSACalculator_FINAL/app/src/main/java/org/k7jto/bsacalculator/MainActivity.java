@@ -159,19 +159,20 @@ public class MainActivity extends Activity {
     public void clickCalculate(View v) {
         // As always, need a 'handle' on the EditText field
         EditText myEditText = (EditText)findViewById(R.id.txtDisplay);
+        k7jtoMath myk7jtoMath = new k7jtoMath();
         try {
             numB = myEditText.getText().toString(); // Get the value for numB from EditText
 
             // Now choose which math to do, based on the operand we set when the user
             // tapped an operation button
             switch (operand) {
-                case 1: result = doAddition(numA, numB);
+                case 1: result = myk7jtoMath.doAddition(numA, numB);
                     break;
-                case 2: result = doSubtraction(numA, numB);
+                case 2: result = myk7jtoMath.doSubtraction(numA, numB);
                     break;
-                case 3: result = doMultiplication(numA, numB);
+                case 3: result = myk7jtoMath.doMultiplication(numA, numB);
                     break;
-                case 4: result = doDivision(numA, numB);
+                case 4: result = myk7jtoMath.doDivision(numA, numB);
                     break;
             }
 
@@ -187,51 +188,6 @@ public class MainActivity extends Activity {
         catch(Exception ex) {
            myEditText.setText("Err Parsing");
         }
-    }
-
-
-    // ************************************************************************
-    //             START REFACTORING HERE TO CHANGE TO DEC
-    // ************************************************************************
-    private int getNumber(String numIn) {
-        try {
-            return Integer.parseInt(numIn);
-        }
-        catch (Exception ex) {
-            // TODO: this is horrible, need to bubble up the exception
-            return 0;
-        }
-    }
-
-    // ************************************************************************
-    //               Add math functions here
-    // ************************************************************************
-    private String doAddition(String a, String b) {
-        int numX = getNumber(a);
-        int numY = getNumber(b);
-        int numAnswer = numX + numY;
-        return Integer.toString(numAnswer);
-    }
-
-    private String doSubtraction(String a, String b) {
-        int numX = getNumber(a);
-        int numY = getNumber(b);
-        int numAnswer = numX - numY;
-        return Integer.toString(numAnswer);
-    }
-
-    private String doMultiplication(String a, String b) {
-        int numX = getNumber(a);
-        int numY = getNumber(b);
-        int numAnswer = numX * numY;
-        return Integer.toString(numAnswer);
-    }
-
-    private String doDivision(String a, String b) {
-        int numX = getNumber(a);
-        int numY = getNumber(b);
-        int numAnswer = numX / numY;
-        return Integer.toString(numAnswer);
     }
 
 
