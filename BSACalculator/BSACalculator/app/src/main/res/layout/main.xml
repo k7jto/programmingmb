@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BSACalculator is a sample application for use with Programming Merit Badge. It was developed by John Overbaugh (K7JTO) and is fully open source. Use it to teach Programming MB and to learn. Contact the author at k7jto.john@gmail.com"/>
+</LinearLayout>

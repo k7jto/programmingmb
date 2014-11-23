@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BSA Calculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_about">About...</string>
+    <string name="app_descrip">BSA Calculator is a sample program for Programming Merit Badge. By John Overbaugh K7JTO. Fully open-source--use and modify as you wish.</string>
+    <string name="app_credits">By John Overbaugh K7JTO. Fully open-source--use and modify as you wish.</string>
+
+</resources>
