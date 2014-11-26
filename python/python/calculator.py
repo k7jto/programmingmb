@@ -82,16 +82,7 @@ def clear():
 def draw(canvas):
     global stack1, stack2, operator, width, height
     #expression = store + " " + operator + " " + operand + " = "
-    pad = 12
-    button_size = [60,60]
-    x_start = (width - (3*button_size[0]+2*pad))/2
-    for j in range(3):
-        for k in range(3):
-            A = [(x_start + k*(button_size[0]+pad)), ((j+1)*pad + j*button_size[1])]
-            B = [(x_start + (k+1)*button_size[1] + k*pad), ((j+1)*pad + j*button_size[1])]
-            C = [(x_start + (k+1)*button_size[1] + k*pad), ((j+1)*(pad + button_size[1]))]
-            D = [(x_start + k*(button_size[0]+pad)), ((j+1)*(pad + button_size[1]))]
-            canvas.draw_polyline([A, B, C, D, A], 5, "White")
+
             
 # create frame
 f = simplegui.create_frame("Calculator",width,height)
